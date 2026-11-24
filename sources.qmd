@@ -10,7 +10,7 @@ title: "Methods and sources"
 
 **Images.** All images are real photographs or archival scans, credited in captions. No image on this site is AI-generated. Archival maps, reports and photographs are from Georgia State University Library's digital collections; recent photographs are from Wikimedia Commons under the licenses shown.
 
-**Use of AI tools.** I used Claude (Anthropic), an AI assistant, to help locate and retrieve sources, extract census figures, draft and organize text, and build the website code. I chose the neighborhood, conducted and transcribed the interviews, checked the sources and figures, and made the final editorial decisions. <!-- Edit this statement so it accurately describes what you did yourself and how you used AI. -->
+
 
 ## References
 
