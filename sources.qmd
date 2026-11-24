@@ -1,0 +1,105 @@
+---
+title: "Methods and sources"
+---
+
+## How this case study was built
+
+**Interviews.** I conducted two semi-structured interviews on Microsoft Teams: Resident A on October 16, 2026 (about 40 minutes of conversation) and Resident B on October 19, 2026 (about 48 minutes). They were recorded with permission and transcribed with Teams' automatic transcription, then corrected against the audio. Interviewees are identified by role pending written confirmation of how they wish to be credited. Their identities and contact details were provided to the course instructor with the transcripts.
+
+**Data.** Demographic figures are American Community Survey 2020–2024 five-year estimates (and 2006–2010 for change), compiled by the Atlanta Regional Commission for NPU-H, NSA H02 and the City of Atlanta. The data are in the `data/` folder of this project, and every chart is drawn in R from those files.
+
+**Images.** All images are real photographs or archival scans, credited in captions. No image on this site is AI-generated. Archival maps, reports and photographs are from Georgia State University Library's digital collections; recent photographs are from Wikimedia Commons under the licenses shown.
+
+**Use of AI tools.** I used Claude (Anthropic), an AI assistant, to help locate and retrieve sources, extract census figures, draft and organize text, and build the website code. I chose the neighborhood, conducted and transcribed the interviews, checked the sources and figures, and made the final editorial decisions. <!-- Edit this statement so it accurately describes what you did yourself and how you used AI. -->
+
+## References
+
+::: {.refs}
+
+### Primary sources
+
+Adamsville Civic Club. (1955). *Neighborhood planning in Adamsville: Now… tomorrow* [Report]. Planning Atlanta Collection, Georgia State University Library. <https://digitalcollections.library.gsu.edu/digital/collection/PlanATL/id/47464>
+
+Atlanta (Ga.). (1977). *Neighborhood plan: Neighborhood Planning Unit H—1978 five year plan* [Map]. Planning Atlanta Collection, Georgia State University Library. <https://digitalcollections.library.gsu.edu/digital/collection/PlanATL/id/1982>
+
+Atlanta (Ga.). Department of Budget and Planning. (1970). *West Adamsville: Ultimate development* [Map]. Planning Atlanta Collection, Georgia State University Library. <https://digitalcollections.library.gsu.edu/digital/collection/PlanATL/id/1407>
+
+Atlanta Board of Aldermen. (1966, March 7). *Resolution regarding licenses and permits upon annexation of Sandy Springs and Adamsville* (Box 8, Folder 22, Document 36). Ivan Allen Jr. Mayoral Records, Georgia Institute of Technology. <https://ivanallen.iac.gatech.edu/mayoral-records/traditional/items/show/3503>
+
+Atlanta Regional Commission. (n.d.). *American Community Survey 2020–2024 five-year estimates by Neighborhood Statistical Area, Neighborhood Planning Unit, and city* [Data sets: population, sex and age, race and ethnicity, income, poverty, unemployment, commuting, housing tenure, occupancy, affordability, value, rent, vehicles, educational attainment, household composition, change since 2010]. ARC Open Data. Retrieved November 22, 2026, from <https://opendata.atlantaregional.com>
+
+City of Atlanta, & TSW. (2020). *NPU-H master plan: A vision for Adamsville*. City of Atlanta Department of City Planning. <https://atlantaga.gov/home/showpublisheddocument/51323/637587567848630000>
+
+Georgia Historical Society. (1958). *Lick Skillet Road* [Historical marker]. <https://www.georgiahistory.com/?p=22551>
+
+Hartsfield, W. B. (1952). *A plan of improvement: The fight for progress*. Georgia Journeys, Kennesaw State University. <https://georgiajourneys.kennesaw.edu/items/show/440>
+
+Interview with Resident A, NPU-H volunteer and Adamsville resident [Video interview]. (2026, October 16). Conducted by F. K. Abdallah via Microsoft Teams. Transcript on file with the author and course instructor.
+
+Interview with Resident B, Adamsville homeowner [Video interview]. (2026, October 19). Conducted by F. K. Abdallah via Microsoft Teams. Transcript on file with the author and course instructor.
+
+Invest Atlanta. (2025a, September 4). *Doors open for three new food access points*. <https://www.investatlanta.com/impact-insights/doors-open-for-three-new-food-access-points>
+
+Invest Atlanta. (2025b). *Hollowell/MLK TAD program guidelines*. <https://investatlanta.com/assets/hollowell_mlk_tad_-_program_guidelines_2025_JZkrbog.pdf>
+
+Metropolitan Atlanta Rapid Transit Authority. (2003, March). *West Line newsletter* (Issue 1). MARTA Collection, Georgia State University Library. <https://digitalcollections.library.gsu.edu/digital/collection/marta/id/5589>
+
+O'Neal, T. (1941). *Train wreck near Adamsville* [Photograph]. Tracy O'Neal Photographic Collection, Georgia State University Library. <https://digitalcollections.library.gsu.edu/digital/collection/oneal/id/168>
+
+### Secondary sources
+
+American Planning Association. (2021, April 16). *In memoriam: Leon Eplan, FAICP*. <https://planning.org/blog/9214667/in-memoriam-leon-eplan-faicp>
+
+An, B. Y. (2023). The influence of institutional single-family rental investors on homeownership: Who gets targeted and pushed out of the local market? *Journal of Planning Education and Research*. <https://doi.org/10.1177/0739456X231176072>
+
+Andrews, A. (2025, August 26). Atlanta opens new food bank serving westside families. *GPB News*. <https://www.gpb.org/news/2025/08/26/atlanta-opens-new-food-bank-serving-westside-families>
+
+Atlanta Department of Watershed Management. (2023, May 11). *Utoy Creek ecosystem restoration study open house*. <https://atlantawatershed.org/utoycreekstudyopenhouse/>
+
+Atlanta News First. (2022, April 13). Douglass High to launch off-site 9th grade academy to improve graduation rates. <https://www.atlantanewsfirst.com/2022/04/13/douglass-high-launch-off-site-9th-grade-academy-improve-graduation-rates>
+
+Atlanta Public Schools. (n.d.). *Our school: L. P. Miles Elementary School*. <https://miles.atlantapublicschools.us/our-school>
+
+The Atlanta Voice. (2021). *C. T. Martin, longtime Adamsville council member, dies*. <https://theatlantavoice.com/c-t-martin-adamsville-obit/>
+
+Banks, B. (2021, May 4). Leon Eplan, 92, who planned Atlanta's modern rise, dies. *The Atlanta Journal-Constitution*. <https://www.ajc.com/news/leon-eplan-92-who-planned-atlantas-modern-rise-dies/74K4RGGY7ZBBNF2TIBYOJXTYII>
+
+Bayor, R. H. (1988). Roads to racial segregation: Atlanta in the twentieth century. *Journal of Urban History, 15*(1), 3–21. <https://doi.org/10.1177/009614428801500101>
+
+Bayor, R. H. (2001). Racism as public policy in America's cities in the twentieth century. In L. E. Jones (Ed.), *Crossing boundaries: The exclusion and inclusion of minorities in Germany and America* (pp. 71–81). Berghahn Books.
+
+Bunch, R. (2023, October 6). Mural featuring Mayor Andre Dickens unveiled in Adamsville. *The Atlanta Journal-Constitution*. <https://ajc.com/news/atlanta-news/mural-featuring-mayor-andre-dickens-unveiled-in-adamsville/QR3MAJ3RSRADDFCLBGFLHD62YY>
+
+Capelouto, J. D. (2022, April 4). Short-term vacation rentals in Atlanta now need a permit to operate; fewer than 3% have one. *The Atlanta Journal-Constitution*. <https://ajc.com/news/atlanta-news/short-term-vacation-rentals-in-atlanta-now-need-a-permit-to-operate-fewer-than-3-have-one/IMSSIPBZZBBZJFEZRBZIN5WS6U>
+
+Carlisle, L. (2021, May 13). *Atlanta's Berlin Wall*. Atlanta History Center. <https://www.atlantahistorycenter.com/blog/atlantas-berlin-wall/>
+
+City of Atlanta Department of Parks and Recreation. (n.d.). *C. T. Martin Natatorium*. <https://atlantaga.gov/government/departments/department-parks-recreation/learn-to-swim/c-t-martin-natatorium>
+
+Daniel, S. (2025, October 29). APS unveils final plan to repurpose 16 schools, save millions. *FOX 5 Atlanta*. <https://www.fox5atlanta.com/news/atlanta-public-schools-unveils-final-plan-repurpose-16-schools-save-millions>
+
+Fried, M. (1966). Grieving for a lost home: Psychological costs of relocation. In J. Q. Wilson (Ed.), *Urban renewal: The record and the controversy* (pp. 359–379). MIT Press.
+
+Fullilove, M. T. (2016). *Root shock: How tearing up city neighborhoods hurts America, and what we can do about it* (2nd ed.). New Village Press.
+
+Gaither, C. J., Himmelfarb, D., Hitchner, S., Schelhas, J., Shepherd, J. M., & K.C., B. (2016). "Where the sidewalk ends": Sustainable mobility in Atlanta's Cascade community. *City & Society, 28*(2), 174–197. <https://doi.org/10.1111/ciso.12077>
+
+Hansen, Z. (2023, February 9). American dream for rent: Investors zero in on Black neighborhoods. *The Atlanta Journal-Constitution*. <https://www.ajc.com/news/american-dream-for-rent-investors-zero-in-on-black-neighborhoods/IHOIGEISJND67BA4GJF33UO7UU/>
+
+Kruse, K. M. (2005). *White flight: Atlanta and the making of modern conservatism*. Princeton University Press.
+
+Peer, T. A. (2025, August 25). Free community food bank to open in Atlanta's Adamsville neighborhood. *Atlanta News First*. <https://www.atlantanewsfirst.com/2025/08/26/free-community-food-bank-open-atlantas-adamsville-neighborhood/>
+
+Raymond, E. L., Duckworth, R., Miller, B., Lucas, M., & Pokharel, S. (2018). From foreclosure to eviction: Housing insecurity in corporate-owned single-family rentals. *Cityscape, 20*(3). <https://www.huduser.gov/portal/periodicals/cityscpe/vol20num3/ch9.pdf>
+
+WSB-TV News Staff. (2025, October 1). Atlanta's mayor unveils $5B neighborhood reinvestment plan. *WSB-TV*. <https://www.wsbtv.com/news/local/atlanta/atlantas-mayor-unveils-5b-neighborhood-reinvestment-plan/JYODGB5H4RHQNAM6D635DEKY6I/>
+
+### Images
+
+Phelan, J. (2026). *City Takers, Adamsville GA*; *Dollar General, Adamsville GA*; *Fire Station No 9, Adamsville GA* [Photographs]. Wikimedia Commons. CC BY 4.0. <https://commons.wikimedia.org/wiki/Category:Adamsville,_Atlanta>
+
+Thomson200. (2016). *Georgia State Route 139 in Adamsville, Atlanta* [Photograph]. Wikimedia Commons. CC0. <https://commons.wikimedia.org/wiki/File:Georgia_State_Route_139_in_Adamsville,_Atlanta.JPG>
+
+CARTO. (2026). *Positron* [Basemap tiles]. Map data © OpenStreetMap contributors. <https://carto.com/basemaps>
+
+:::

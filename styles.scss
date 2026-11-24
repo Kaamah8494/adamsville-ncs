@@ -1,0 +1,29 @@
+/*-- scss:defaults --*/
+$primary: #c2412f;
+$body-color: #1c2422;
+$body-bg: #f7f6f1;
+$font-family-sans-serif: "Source Serif 4", Georgia, serif;
+$headings-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+$navbar-bg: #1c2422;
+
+/*-- scss:rules --*/
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+h1, h2 { font-weight: 800; letter-spacing: -0.01em; }
+.voice { border-left: 4px solid #e9c74f; padding: .2rem 0 .2rem 1rem; margin: 1.5rem 0; font-style: italic; font-size: 1.1rem; }
+.voice .who { display: block; font-style: normal; font-size: .85rem; color: #4a5450; margin-top: .3rem; }
+.voice.b { border-color: #6f9a7c; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #d8d4c6; border: 1px solid #d8d4c6; margin: 1.5rem 0; }
+.stat-row div { background: #fff; padding: .8rem 1rem; }
+.stat-row b { display: block; font-family: "Archivo", sans-serif; font-size: 1.7rem; }
+.stat-row span { font-size: .85rem; color: #4a5450; }
+.dialogue { display: grid; gap: .8rem; margin: 1.5rem 0; }
+.bubble { max-width: 85%; padding: .8rem 1rem; border-radius: 14px; background: #fff; border: 1px solid #d8d4c6; }
+.bubble.a { justify-self: start; border-bottom-left-radius: 2px; }
+.bubble.b { justify-self: end; border-bottom-right-radius: 2px; background: #eef4ef; }
+.bubble small { display: block; color: #4a5450; margin-top: .3rem; }
+.tl-era { font-family: "Archivo", sans-serif; font-weight: 800; color: #c2412f; margin: 1.6rem 0 .4rem; }
+.tl-ev { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: .5rem 0; border-bottom: 1px dashed #d8d4c6; }
+.tl-ev .yr { font-family: monospace; color: #4a5450; }
+.tl-ev .tag { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; padding: 1px 6px; background: #e9c74f; border-radius: 2px; margin-right: .4rem; }
+.tl-ev .src { font-size: .8rem; color: #4a5450; }
+.refs p { padding-left: 2em; text-indent: -2em; font-size: .9rem; overflow-wrap: anywhere; }

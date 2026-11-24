@@ -1,0 +1,68 @@
+---
+title: "Adamsville at the Crossroads"
+subtitle: "A neighborhood case study of Adamsville, NPU-H, Atlanta"
+author: "Faisal Kaamah Abdallah"
+date: "November 24, 2026"
+toc: false
+---
+
+```{r setup}
+library(leaflet)
+library(readr)
+library(jsonlite)
+```
+
+![Martin Luther King Jr. Drive (State Route 139) in Adamsville. Photo: Thomson200, 2016, CC0, Wikimedia Commons.](images/hero.jpg){fig-alt="A four-lane road with power lines and a fast-food sign in the distance."}
+
+For seventy years, plans for this west Atlanta neighborhood have circled the same intersection. What residents say they still need is strikingly close to what their neighbors asked for in 1955.
+
+## Why Adamsville, and why now
+
+Adamsville sits where Martin Luther King Jr. Drive meets Fairburn Road, just inside Interstate 285 on Atlanta's west edge. It is a small place with a large name: the I-285 exit sign says "Adamsville," and residents often use the word for a wider area than the city's official boundary.
+
+This case study is written for the people who make decisions about Adamsville: council staff, planners and agency managers. It draws on archival plans and maps, census data, scholarship, local news, and two in-depth interviews I conducted with Adamsville residents in October 2026. The interviewees are identified by role only (Resident A and Resident B) because they have not confirmed how they wish to be named.
+
+The story is about continuity more than change. In 1955, a neighborhood civic club wrote its own plan asking for a shopping center at the crossroads, safe walking paths, better bus service, sewers and a park. Residents in 2026 asked for a grocery store, sidewalks, working drainage, and a reason to trust that showing up to meetings matters.
+
+::: {.callout-note appearance="simple"}
+## Three findings for decision-makers
+
+**A planned crossroads that never fully arrived.** Plans in 1955, 1970, 1977 and 2020 all placed a town center at MLK Jr. Drive and Fairburn Road. Today the corner holds a dollar store, a church in a former commercial building, a fire station, and a free food center in a former Family Dollar.
+
+**Young households, older voices.** Census estimates show NPU-H has far more children than Atlanta overall (28% vs. 17%). Yet both residents described Adamsville as an aging place, and elders' voices carry the most weight in meetings.
+
+**Costs that land on the household.** Flooded basements, long bus commutes and missing sidewalks are public problems that residents pay for privately, in repair bills, time and risk.
+:::
+
+<!-- YOUR VOICE: add 2-3 sentences in your own words on why you chose Adamsville
+(for example, what you learned about it during your internship with Partnership
+for Southern Equity, and what surprised you on your field visit). -->
+
+## Twelve places that explain Adamsville
+
+Click a marker to read about each place. The dashed outline is Neighborhood Statistical Area H02 (Adamsville and Oakcliff), the area the city uses for census statistics.
+
+```{r map}
+places <- read_csv("data/places.csv", show_col_types = FALSE)
+nsa <- paste(readLines("data/nsa_h02.geojson", warn = FALSE), collapse = "")
+
+pal <- colorFactor(c("#d2493c", "#6f9a7c", "#b8901c", "#4f8fb4"),
+                   domain = c("Commercial", "Civic", "Recreation", "Service"))
+
+leaflet(places, height = 560) |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  addGeoJSON(nsa, color = "#c2412f", weight = 3, dashArray = "8 6",
+             fillColor = "#e9c74f", fillOpacity = 0.25) |>
+  addCircleMarkers(~lon, ~lat, radius = 11, color = "#ffffff", weight = 2,
+                   fillColor = ~pal(type), fillOpacity = 1,
+                   label = ~paste0(id, ". ", name),
+                   popup = ~paste0("<b>", id, ". ", name, "</b><br>", note)) |>
+  addLabelOnlyMarkers(~lon, ~lat, label = ~as.character(id),
+                      labelOptions = labelOptions(noHide = TRUE, direction = "center",
+                                                  textOnly = TRUE,
+                                                  style = list("color" = "white", "font-weight" = "bold"))) |>
+  addLegend("bottomright", pal = pal, values = ~type, title = "Place type") |>
+  setView(lng = -84.505, lat = 33.757, zoom = 14)
+```
+
+*Boundary: Atlanta Regional Commission. Basemap: CARTO, OpenStreetMap contributors. Locations geocoded with the ArcGIS World Geocoding Service.*

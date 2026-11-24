@@ -1,0 +1,112 @@
+---
+title: "Who lives here"
+subtitle: "Demographics and identity, by the numbers and in residents' words"
+---
+
+```{r setup}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+age <- read_csv("data/age_profile.csv", show_col_types = FALSE)
+ind <- read_csv("data/indicators.csv", show_col_types = FALSE)
+theme_ncs <- theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank(), legend.position = "top",
+        plot.title.position = "plot", plot.caption = element_text(color = "grey40", hjust = 0))
+```
+
+The census describes a young, working-class, overwhelmingly Black community with high poverty and heavy reliance on transit. Residents describe a quiet, older, close-knit place. Both are true, and the gap between them matters for planning.
+
+**A note on geography.** The city's statistical area for Adamsville (NSA H02, shared with Oakcliff) has only about 3,000 residents, so its census estimates carry very large margins of error (population 3,013 ± 1,911). This page therefore leads with NPU-H, the 16,000-person planning unit that includes Adamsville and the surrounding subdivisions residents also call "Adamsville." Figures are American Community Survey (ACS) 2020–2024 five-year estimates compiled by the Atlanta Regional Commission (ARC) from U.S. Census Bureau data.
+
+::: {.stat-row}
+<div><b>16,248</b><span>NPU-H residents (± 2,904)</span></div>
+<div><b>88%</b><span>Black, non-Hispanic (Atlanta 45%)</span></div>
+<div><b>$53,658</b><span>median household income (Atlanta $85,652)</span></div>
+<div><b>44%</b><span>of children below the poverty line (Atlanta 23%)</span></div>
+:::
+
+```{r age-chart}
+#| fig-cap: "Share of residents by age group, NPU-H and City of Atlanta. Source: ARC, ACS 2020–2024."
+#| fig-height: 5.5
+age |>
+  mutate(age_group = factor(age_group, levels = rev(age_group))) |>
+  pivot_longer(c(npu_h, atlanta), names_to = "area", values_to = "pct") |>
+  mutate(area = recode(area, npu_h = "NPU-H", atlanta = "City of Atlanta")) |>
+  ggplot(aes(pct, age_group, fill = area)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.75) +
+  scale_fill_manual(values = c("NPU-H" = "#d2493c", "City of Atlanta" = "#8a918d")) +
+  scale_x_continuous(labels = function(x) paste0(x, "%")) +
+  labs(x = NULL, y = NULL, fill = NULL,
+       title = "More children, fewer adults aged 20 to 44 than the city") +
+  theme_ncs
+```
+
+```{r dot-chart}
+#| fig-cap: "NPU-H compared with Atlanta. Red bars show the NPU-H margin of error. Source: ARC, ACS 2020–2024."
+#| fig-height: 5.5
+ind |>
+  mutate(indicator = factor(indicator, levels = rev(indicator))) |>
+  ggplot(aes(y = indicator)) +
+  geom_segment(aes(x = pmax(0, npu_h - npu_h_moe), xend = npu_h + npu_h_moe, yend = indicator),
+               linewidth = 4, color = "#d2493c", alpha = 0.25, lineend = "round") +
+  geom_point(aes(x = atlanta), shape = 21, size = 3.5, fill = "white", color = "#4a5450", stroke = 1.2) +
+  geom_point(aes(x = npu_h), size = 4, color = "#d2493c") +
+  scale_x_continuous(labels = function(x) paste0(x, "%"), limits = c(0, 75)) +
+  labs(x = NULL, y = NULL, title = "Red = NPU-H, open circle = City of Atlanta") +
+  theme_ncs
+```
+
+## What the numbers say
+
+NPU-H is 88 percent Black, compared with 45 percent citywide. Its median household income ($53,658) is about 63 percent of the city's ($85,652), and 30 percent of residents live below the poverty line. For children the figure is 44 percent. Housing is cheaper than in most of Atlanta (median home value $214,316 against $439,600), but cheaper is not affordable here: 57 percent of renters and 45 percent of mortgage-holding owners spend 30 percent or more of income on housing. Over a quarter of households have no vehicle, and the average commute is 34 minutes, nearly eight minutes longer than the city average.
+
+```{r change-chart}
+#| fig-cap: "Selected NPU-H indicators, ACS 2006–2010 vs. 2020–2024. Source: ARC."
+#| fig-height: 3.8
+ind |>
+  filter(!is.na(npu_h_2010)) |>
+  select(indicator, `2006–2010` = npu_h_2010, `2020–2024` = npu_h) |>
+  pivot_longer(-indicator, names_to = "period", values_to = "pct") |>
+  ggplot(aes(pct, reorder(indicator, pct), color = period)) +
+  geom_line(aes(group = indicator), color = "grey70", linewidth = 1) +
+  geom_point(size = 3.5) +
+  scale_color_manual(values = c("2006–2010" = "#8a918d", "2020–2024" = "#d2493c")) +
+  scale_x_continuous(labels = function(x) paste0(x, "%")) +
+  labs(x = NULL, y = NULL, color = NULL, title = "Poverty, vacancy and rent burden fell since 2010") +
+  theme_ncs
+```
+
+Change since 2010 is mixed. Estimated population grew from 14,988 to 16,248, poverty fell from 33 to 30 percent, and vacancy dropped from 19 to 12 percent. Median household income roughly doubled in current dollars (from $26,807), suggesting both recovery from the foreclosure crisis and the arrival of higher-income households. In Adamsville's core (NSA H02) about seven in ten households rent; that figure is far less certain (± 21 points) but points the same way.
+
+## Two stories about age
+
+::: {layout-ncol=2}
+::: {.callout-note appearance="simple"}
+## What residents said
+Resident A: "definitely a lot of long term residents, aging population." Resident B: people on her street are "like 55, 60 years old and over," and some are "starting to go into nursing homes or unfortunately passing away."
+:::
+
+::: {.callout-tip appearance="simple"}
+## What the census shows
+28 percent of NPU-H residents are under 18 (city: 17 percent), and 14 percent are 65 or older (city: 12 percent). Adults aged 20 to 34 are just 20 percent (city: 31 percent). 15 percent of households moved in before 1990, more than twice the city rate.
+:::
+:::
+
+Both residents live among owner-occupied single-family homes, where long-time owners have aged in place. Much of the area's child population lives elsewhere, in rental apartments and rented houses; the master plan, for example, discusses keeping the Fairburn Gordon Apartments at the crossroads (City of Atlanta & TSW, 2020, p. 90). These are two Adamsvilles that rarely meet: homeowners who attend NPU meetings and see an aging street, and renting families who appear in the data but not in the meeting room.
+
+## Identity: contested from outside, protective from inside
+
+Outsiders often know Adamsville from the news. Resident B put it directly: people "look at this area and think that it's a bad area," especially around Fairburn Road and MLK. A stray bullet hit her family's car in 2026 while her young daughter was inside. Yet her description of the neighborhood is about quiet, wildlife, and neighbors who "treat you like family." One elderly neighbor took in the family's cat when her son turned out to be allergic, and the children still visit it.
+
+::: {.voice .b}
+"When you drive to the neighborhood, you'll be like, are there even people here? Because it's so quiet."
+<span class="who">Resident B, interview, October 19, 2026</span>
+:::
+
+::: {.voice}
+"It's right between like industrial, Fulton Industrial, and the city. It's like a sweet spot."
+<span class="who">Resident A, NPU-H volunteer, interview, October 16, 2026</span>
+:::
+
+Residents' sense of place is strongly natural: Wildwood Lake, creeks, deer, herons, "lots of trees." This echoes the Civic Club's 1955 wish to preserve "the rural qualities we cherish." Adamsville's identity is also stretched by its name. Residents use "Adamsville" loosely for the area around the interstate exit, including subdivisions the city counts as separate neighborhoods. The 1977 NPU-H plan already grouped Adamsville with Boulder Park, Fairburn Heights and Carroll Heights. The name works as a regional identity, anchored by the exit sign, the skating rink and the recreation center, more than as a line on a map.
