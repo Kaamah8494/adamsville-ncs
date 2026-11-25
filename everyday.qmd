@@ -3,7 +3,7 @@ title: "Everyday life"
 subtitle: "Church on Sunday, seniors midweek, and a long ride to work"
 ---
 
-Everyday life in Adamsville runs on a few strong anchors (churches, the recreation centers, the skating rink) and on a shared norm of privacy. That norm protects quiet but also limits collective action.
+Everyday life in Adamsville centers on a few places, mainly churches, the recreation centers and the skating rink, and on a general habit of leaving neighbors alone. That privacy keeps the neighborhood quiet, but it also makes it harder to bring people together around shared problems.
 
 ## The rhythm of the week and year
 
@@ -19,11 +19,11 @@ Everyday life in Adamsville runs on a few strong anchors (churches, the recreati
 
 ## Anchors
 
-**Churches.** Resident A counted four churches near her block. Resident B said the elders "are involved in church a lot on Sundays. That's where they're going." Churches also run back-to-school drives and giveaways that, as Resident A noted, mostly serve people who are not members. The civic role of churches has deep roots here: in 1955 the Civic Club proposed that ministers lead a citizens' committee to help neighbors in need.
+Resident A counted four churches near her block. Resident B said the elders "are involved in church a lot on Sundays. That's where they're going." Churches also run back-to-school drives and giveaways that, as Resident A noted, mostly serve people who are not members. Churches have played a civic role here for a long time. In 1955 the Civic Club proposed that ministers lead a citizens' committee to help neighbors in need.
 
-**Recreation.** The C. T. Martin Natatorium and Recreation Center at 3201 MLK Jr. Drive has a 50-meter pool and a warm-water therapy pool (City of Atlanta Department of Parks and Recreation, n.d.). It was built after council member C. T. Martin pushed to demolish a troubled apartment complex, and was renamed for him in 2017 (The Atlanta Voice, 2021). The older Adamsville Recreation Center serves seniors and works as a warming center (City of Atlanta & TSW, 2020, p. 18). Cascade Family Skating, featured in the 2006 film *ATL*, draws young people from across the region. Community events happen mostly at Wilson Mill Park and churches.
+The C. T. Martin Natatorium and Recreation Center at 3201 MLK Jr. Drive has a 50-meter pool and a warm-water therapy pool (City of Atlanta Department of Parks and Recreation, n.d.). It was built after council member C. T. Martin pushed to demolish a troubled apartment complex, and was renamed for him in 2017 (The Atlanta Voice, 2021). The older Adamsville Recreation Center serves seniors and works as a warming center (City of Atlanta & TSW, 2020, p. 18). Cascade Family Skating, featured in the 2006 film *ATL*, draws young people from across the region. Community events happen mostly at Wilson Mill Park and churches.
 
-**Gardens and food.** Young Generation Movement, a youth nonprofit named in the master plan alongside Gratitude Botanical Farm (City of Atlanta & TSW, 2020, p. 42), runs a community garden and marketplace. Resident A said the garden gives young people "a productive and safe place to go."
+Young Generation Movement, a youth nonprofit named in the master plan alongside Gratitude Botanical Farm (City of Atlanta & TSW, 2020, p. 42), runs a community garden and marketplace. Resident A said the garden gives young people "a productive and safe place to go."
 
 ## Norms
 
@@ -32,13 +32,13 @@ Everyday life in Adamsville runs on a few strong anchors (churches, the recreati
 <span class="who">Resident B, interview, October 19, 2026</span>
 :::
 
-Asked about unwritten rules, Resident B described one: leave people alone. Privacy is valued, especially by older homeowners who remember a rural past, and it makes Adamsville feel calm. It also has costs. Neighbors do not organize around overgrown lots, and many residents, as Resident A said, "just go home, wake up, go to work," missing news about meetings or events. Both residents suggested old-fashioned fixes: flyers, a magnet in every mailbox, door knocking, a newsletter.
+When I asked about unwritten rules, Resident B described one main rule, which is to leave people alone. Older homeowners who remember a more rural Adamsville especially value this privacy, and it helps keep the neighborhood calm. The downside is that neighbors do not organize around problems like overgrown lots, and, as Resident A said, many residents "just go home, wake up, go to work" and miss news about meetings or events. Both residents suggested simple ways to reach people, such as flyers, a magnet in every mailbox, door knocking or a newsletter.
 
-Care between neighbors happens one to one rather than through organizations: gifts dropped off, packages picked up, a cat rehomed next door. Adamsville has strong personal ties and weak organizational ones. That explains both why residents feel at home and why turnout at public meetings is low.
+Neighbors do help each other, but mostly one on one rather than through organizations. Residents described gifts dropped off, packages picked up, and a cat rehomed next door. In my view, these personal ties help explain why residents feel at home, and the weaker organizational ties help explain why turnout at public meetings is low.
 
 ## Two residents, one conversation
 
-Placed side by side, the interviews read like a conversation about the same streets.
+I interviewed the two residents separately, but on several topics their answers respond to each other, so I have placed some of their quotes side by side below.
 
 ::: {.dialogue}
 <div class="bubble a">"I will say Adamsville is a bit of a food desert, honestly… You would have to go a couple exits up."<small>Resident A</small></div>
@@ -49,8 +49,8 @@ Placed side by side, the interviews read like a conversation about the same stre
 <div class="bubble b">"I want it to look more contemporary, like some newer renovations on the houses."<small>Resident B</small></div>
 :::
 
-The last exchange shows a real disagreement. One resident sees renovation as investors extracting value; the other sees it as long-awaited improvement.
+The last pair of quotes shows a real disagreement between them. Resident A sees renovation as investors taking value out of the neighborhood, while Resident B sees it as improvement the neighborhood has waited a long time for.
 
 ## Getting around
 
-About one in four NPU-H households has no car, and 16 percent of workers commute by transit, nearly three times the city rate. Resident B, who drives, can walk only to fast food. The Civic Club's 1955 hope for "natural walkways" linking homes to schools and stores was never built, and in 2026 many streets still lack sidewalks. Resident B recalled being told that her subdivision was built without sidewalks on purpose. People walk in the street or not at all.
+About one in four NPU-H households has no car, and 16 percent of workers commute by transit, nearly three times the city rate. Resident B, who drives, can walk only to fast food. The Civic Club's 1955 hope for "natural walkways" linking homes to schools and stores was never built, and in 2026 many streets still lack sidewalks. Resident B recalled being told that her subdivision was built without sidewalks on purpose. As a result, people either walk in the street or do not walk.

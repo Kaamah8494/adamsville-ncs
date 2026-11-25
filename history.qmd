@@ -9,21 +9,21 @@ library(dplyr)
 library(htmltools)
 ```
 
-Adamsville's history follows Atlanta's own path: a farm crossroads swallowed by the city's postwar growth, shaped by highway building and racial transition, then left at the margins of investment.
+Adamsville started as a farm crossroads outside Atlanta. The city's postwar growth absorbed it, highway building and racial change reshaped it, and in recent decades it has received relatively little investment.
 
 ## A farm crossroads
 
 Before it was Adamsville, the settlement was a crossroads called Lick Skillet, on the road from the Chattahoochee River ferries into Atlanta. Reports from the July 1864 Battle of Ezra Church refer to "Lick Skillet Road," and a 1958 state historical marker notes that the crossroads settlement is "now known as Adamsville" (Georgia Historical Society, 1958). The name changed in the 1870s, after a Masonic lodge founded by George W. Adams, and became official in 1906 (City of Atlanta & TSW, 2020, p. 16). The Adamsville Civic Club's 1955 history recalls that the families of old Lick Skillet, among them the Fains, Howells, Waites and Greens, were still prominent, and that Adams gave his name to "the road junction and the few stores" (Adamsville Civic Club, 1955, p. 3).
 
-This was not a single, all-white rural community. In 1907 a congregation started the Bethlehem Church School, which Atlanta Public Schools describes as the first school for African American students in the Adamsville–Boulder Park community, later renamed L. P. Miles Elementary (Atlanta Public Schools, n.d.). The Civic Club's 1955 report, written by the white civic organization that dominated local planning, does not mention these Black families at all. That silence is evidence of who counted as "the community" when planning began.
+Black families also lived in the area from early on. In 1907 a congregation started the Bethlehem Church School, which Atlanta Public Schools describes as the first school for African American students in the Adamsville–Boulder Park community, later renamed L. P. Miles Elementary (Atlanta Public Schools, n.d.). The Civic Club's 1955 report, written by the white civic organization that dominated local planning, does not mention these Black families at all, which says something about who counted as "the community" when planning began.
 
 ![Train wreck near Adamsville on the Atlantic, Birmingham & Coast Line, 1941. Photo: Tracy O'Neal. Tracy O'Neal Photographic Collection, Georgia State University Library. Used for educational purposes.](images/train.jpg){fig-alt="A derailed steam locomotive tilted on the tracks in a cut, with onlookers on the bank at night."}
 
 ## The 1950s: a neighborhood that planned for itself
 
-Growth arrived quickly after World War II. In the Civic Club's words, "in 1951, when we were annexed by Atlanta, we became aware of how different the area was becoming. We suddenly found ourselves in the path of Atlanta's enormous urban growth" (Adamsville Civic Club, 1955, p. 3). That was the year the state approved Mayor Hartsfield's Plan of Improvement, which tripled the city's area in 1952 (Hartsfield, 1952). Annexation came in stages: in 1966 the General Assembly authorized a referendum to bring the remaining unincorporated Adamsville area into the city on January 1, 1967 (Atlanta Board of Aldermen, 1966).
+Growth came quickly after World War II. In the Civic Club's words, "in 1951, when we were annexed by Atlanta, we became aware of how different the area was becoming. We suddenly found ourselves in the path of Atlanta's enormous urban growth" (Adamsville Civic Club, 1955, p. 3). That was the year the state approved Mayor Hartsfield's Plan of Improvement, which tripled the city's area in 1952 (Hartsfield, 1952). Annexation came in stages: in 1966 the General Assembly authorized a referendum to bring the remaining unincorporated Adamsville area into the city on January 1, 1967 (Atlanta Board of Aldermen, 1966).
 
-Commercial photographers working on Gordon Road, the old road west through Adamsville that is now Martin Luther King Jr. Drive, recorded this postwar change: new brick houses on cleared lots, a lumber yard supplying the building boom, and rail crews laying track for the industry growing to the west. The negative envelopes record only "Gordon Road," so the exact locations are not known.
+Photographs taken on Gordon Road, the old road west through Adamsville that is now Martin Luther King Jr. Drive, show some of this postwar change, including new brick houses on cleared lots, a lumber yard supplying the building boom, and rail crews laying track for the industry growing to the west. The negative envelopes record only "Gordon Road," so the exact locations are not known.
 
 ::: {layout-ncol=3}
 ![Gordon Road, May 13, 1949. Lane Brothers Commercial Photographers Collection, GSU Library. Educational use.](images/gordon1949.jpg)
@@ -39,7 +39,7 @@ Commercial photographers working on Gordon Road, the old road west through Adams
 ![Cover of the 1955 report. Planning Atlanta Collection, Georgia State University Library.](images/civic_cover.jpg)
 :::
 
-The Civic Club's report was built around Margaret Fain School, which it called "the most important building in the community," the place for meetings, dinners and play (Adamsville Civic Club, 1955). The building still stands. From 2022 it housed Douglass High School's ninth-grade academy, and Atlanta Public Schools now plans to close it (Atlanta News First, 2022; Daniel, 2025).
+The Civic Club's report was built around Margaret Fain School, which it called "the most important building in the community," the place for meetings, dinners and play (Adamsville Civic Club, 1955). The building is still standing, and from 2022 it housed Douglass High School's ninth-grade academy, and Atlanta Public Schools now plans to close it (Atlanta News First, 2022; Daniel, 2025).
 
 ::: {layout-ncol=2}
 ![Margaret Fain Elementary School, historical photograph (date not recorded). Classmates.com. Used for educational purposes.](images/fain_old.jpg){fig-alt="Black-and-white photo of a long one-story brick school behind bare trees on a grassy bank."}
@@ -47,7 +47,7 @@ The Civic Club's report was built around Margaret Fain School, which it called "
 ![The Fain school site in February 2025, signed as Douglass High School's 9th Grade STEAM Academy at the Margaret Fain School. Image: Google Street View.](images/fain_today.jpg){fig-alt="A covered walkway leading to a school entrance with a yellow sign."}
 :::
 
-**What the Civic Club asked for in 1955**
+The Civic Club's main requests in 1955 were:
 
 - A shopping center grouped "at the crossroads of Fairburn and Gordon Roads," instead of stores strung along Gordon Road (p. 6).
 - "Natural walkways" so children could reach schools and parks "without crossing trafficked streets" (pp. 5, 9, 11).
@@ -56,28 +56,28 @@ The Civic Club's report was built around Margaret Fain School, which it called "
 - A park: "There are no parks in Adamsville" (p. 10).
 - Doctors and a drug store. None were within four miles, and the nearest hospital was nine miles away (p. 14).
 
-The report credits Leon S. Eplan of the Metropolitan Planning Commission as "Adamsville Planner." This appears to be the same Leon Eplan who, as the city's commissioner of budget and planning, helped set up Atlanta's Neighborhood Planning Unit system in the 1970s (Banks, 2021; American Planning Association, 2021). Adamsville's own experiment in resident-led planning was an early rehearsal for the system that now governs NPU-H.
+The report credits Leon S. Eplan of the Metropolitan Planning Commission as "Adamsville Planner." This appears to be the same Leon Eplan who, as the city's commissioner of budget and planning, helped set up Atlanta's Neighborhood Planning Unit system in the 1970s (Banks, 2021; American Planning Association, 2021). If so, Adamsville's 1955 plan was an early example of the kind of resident-led planning that the NPU system later made citywide.
 
 ## Highways as boundaries
 
 Postwar Atlanta used roads to manage racial change on the west side. Historian Ronald Bayor found that the city's Bureau of Planning, in a 1960 "Report on the Adamsville Transition Area," acknowledged an understanding that the planned west expressway would mark the line between white residents to the south and Black residents to the north. The city blocked Black developers from building south of the road, citing its "obligations to the Adamsville citizens to adhere to the expressway route boundary" (Bayor, 2001, pp. 71–81; see also Bayor, 1988). The Civic Club had already described the expressway as a "buffer" between industry and homes (1955, p. 7). In nearby Cascade Heights, Mayor Ivan Allen Jr. went further in December 1962, putting up a barricade on Peyton Road after white residents demanded a "racial buffer" against Black homebuyers. A court ordered it removed after 72 days (Carlisle, 2021).
 
-The barriers did not hold. As in Mozley Park and Cascade before it (Kruse, 2005; Gaither et al., 2016), white families sold and left, and Black families, many of them middle-class, moved in through the 1960s and 1970s. Interstates 20 and 285 were built in the 1960s and meet at Adamsville. The I-285 exit sign still uses the neighborhood's name (City of Atlanta & TSW, 2020, p. 17).
+As in Mozley Park and Cascade before it (Kruse, 2005; Gaither et al., 2016), white families in Adamsville sold and left anyway, and Black families, many of them middle-class, moved in through the 1960s and 1970s. Interstates 20 and 285 were built in the 1960s and meet at Adamsville. The I-285 exit sign still uses the neighborhood's name (City of Atlanta & TSW, 2020, p. 17).
 
 ## How residents tell this history
 
-Residents I interviewed tell a story of a peak followed by decline. Resident B, a homeowner, heard from neighborhood leaders that the area "used to be really like flourishing," with "a lot of black wealth" and a high school that was "one of the most desirable" to attend, before wealth moved toward Smyrna, Marietta and the east side. Resident A emphasized newer landmarks: the C. T. Martin recreation center and the artists who grew up nearby. Neither knew the 1950s story of planning, annexation or racial boundaries.
+Resident B, a homeowner, heard from neighborhood leaders that the area "used to be really like flourishing," with "a lot of black wealth" and a high school that was "one of the most desirable" to attend, before wealth moved toward Smyrna, Marietta and the east side. Resident A talked more about newer landmarks, such as the C. T. Martin recreation center and the artists who grew up nearby. Neither of them knew about the 1950s planning, annexation or racial boundaries.
 
 ::: {.voice .b}
 "I know that this community used to be really like flourishing. Black, a lot of black wealth was situated in this community."
 <span class="who">Resident B, homeowner, interview, October 19, 2026</span>
 :::
 
-The two accounts do not contradict each other. The archive explains why the Black middle-class Adamsville that residents remember arrived on land that had been planned and zoned around them, on the far side of an expressway the city had treated as a racial line. The road at Adamsville's center now carries Dr. King's name, which links the neighborhood to the city's civil rights history. Downtown, the same road was once Hunter Street, where students marched on the State Capitol in 1960.
+I do not think the archival record and the residents' accounts contradict each other. The records help explain how the Black middle-class Adamsville that residents remember came about, on land that had been planned and zoned around them and on the far side of an expressway the city had treated as a racial line. The road at the center of Adamsville now carries Dr. King's name, which links the neighborhood to the city's civil rights history. Downtown, the same road was once Hunter Street, where students marched on the State Capitol in 1960.
 
 ![Marchers on Hunter Street (later Martin Luther King Jr. Drive) during a civil rights march on the Georgia State Capitol, May 17, 1960. Atlanta Journal-Constitution Photographic Archives, GSU Library. Educational use.](images/march1960.jpg){width=85%}
 
-Public memory today is organized around Black civic leaders. The 2023 "Adamsville Legacy" mural on MLK Jr. Drive by artist Ashley Dopson honors former council member C. T. Martin, State Senator Horace Tate, Rev. Dr. Gregory A. Sutton of Jackson Memorial Baptist Church, and Mayor Andre Dickens, who said at the unveiling, "This is home for me, I grew up right here" (Bunch, 2023).
+Today, the neighborhood's public memorials honor Black civic leaders. The 2023 "Adamsville Legacy" mural on MLK Jr. Drive by artist Ashley Dopson honors former council member C. T. Martin, State Senator Horace Tate, Rev. Dr. Gregory A. Sutton of Jackson Memorial Baptist Church, and Mayor Andre Dickens, who said at the unveiling, "This is home for me, I grew up right here" (Bunch, 2023).
 
 ## Timeline, 1864–2026
 

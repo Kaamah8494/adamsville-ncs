@@ -15,9 +15,9 @@ theme_ncs <- theme_minimal(base_size = 13) +
         plot.title.position = "plot", plot.caption = element_text(color = "grey40", hjust = 0))
 ```
 
-The census describes a young, working-class, overwhelmingly Black community with high poverty and heavy reliance on transit. Residents describe a quiet, older, close-knit place. Both are true, and the gap between them matters for planning.
+The census and the residents give two different pictures of Adamsville. The census shows a young, working-class, mostly Black community with high poverty and heavy use of transit. The residents I interviewed described a quiet, older, close-knit place. I think both pictures are accurate, and the difference between them is important for planning.
 
-**A note on geography.** The city's statistical area for Adamsville (NSA H02, shared with Oakcliff) has only about 3,000 residents, so its census estimates carry very large margins of error (population 3,013 ± 1,911). This page therefore leads with NPU-H, the 16,000-person planning unit that includes Adamsville and the surrounding subdivisions residents also call "Adamsville." Figures are American Community Survey (ACS) 2020–2024 five-year estimates compiled by the Atlanta Regional Commission (ARC) from U.S. Census Bureau data.
+Most figures on this page are for NPU-H, the 16,000-person planning unit that includes Adamsville and the surrounding subdivisions that residents also call "Adamsville." I did not rely on the city's smaller statistical area for Adamsville (NSA H02, shared with Oakcliff) because it has only about 3,000 residents, so its estimates carry very large margins of error (population 3,013 ± 1,911). All figures are American Community Survey (ACS) 2020–2024 five-year estimates compiled by the Atlanta Regional Commission (ARC) from U.S. Census Bureau data.
 
 ::: {.stat-row}
 <div><b>16,248</b><span>NPU-H residents (± 2,904)</span></div>
@@ -59,7 +59,7 @@ ind |>
 
 ## What the numbers say
 
-NPU-H is 88 percent Black, compared with 45 percent citywide. Its median household income ($53,658) is about 63 percent of the city's ($85,652), and 30 percent of residents live below the poverty line. For children the figure is 44 percent. Housing is cheaper than in most of Atlanta (median home value $214,316 against $439,600), but cheaper is not affordable here: 57 percent of renters and 45 percent of mortgage-holding owners spend 30 percent or more of income on housing. Over a quarter of households have no vehicle, and the average commute is 34 minutes, nearly eight minutes longer than the city average.
+NPU-H is 88 percent Black, compared with 45 percent citywide. Its median household income ($53,658) is about 63 percent of the city's ($85,652), and 30 percent of residents live below the poverty line. For children the figure is 44 percent. Housing is cheaper than in most of Atlanta (median home value $214,316 against $439,600), but many households still struggle to pay for it. 57 percent of renters and 45 percent of mortgage-holding owners spend 30 percent or more of income on housing. Over a quarter of households have no vehicle, and the average commute is 34 minutes, nearly eight minutes longer than the city average.
 
 ```{r change-chart}
 #| fig-cap: "Selected NPU-H indicators, ACS 2006–2010 vs. 2020–2024. Source: ARC."
@@ -77,7 +77,7 @@ ind |>
   theme_ncs
 ```
 
-Change since 2010 is mixed. Estimated population grew from 14,988 to 16,248, poverty fell from 33 to 30 percent, and vacancy dropped from 19 to 12 percent. Median household income roughly doubled in current dollars (from $26,807), suggesting both recovery from the foreclosure crisis and the arrival of higher-income households. In Adamsville's core (NSA H02) about seven in ten households rent; that figure is far less certain (± 21 points) but points the same way.
+Since 2010, the estimated population has grown from 14,988 to 16,248, poverty fell from 33 to 30 percent, and vacancy dropped from 19 to 12 percent. Median household income roughly doubled in current dollars (from $26,807), which probably reflects both recovery from the foreclosure crisis and the arrival of higher-income households. In Adamsville's core (NSA H02), about seven in ten households rent, although that estimate is much less certain (± 21 points).
 
 ## Swipe the map: 2006–2010 vs. 2020–2024
 
@@ -159,11 +159,11 @@ Resident A: "definitely a lot of long term residents, aging population." Residen
 :::
 :::
 
-Both residents live among owner-occupied single-family homes, where long-time owners have aged in place. Much of the area's child population lives elsewhere, in rental apartments and rented houses; the master plan, for example, discusses keeping the Fairburn Gordon Apartments at the crossroads (City of Atlanta & TSW, 2020, p. 90). These are two Adamsvilles that rarely meet: homeowners who attend NPU meetings and see an aging street, and renting families who appear in the data but not in the meeting room.
+Both residents live among owner-occupied single-family homes, where long-time owners have aged in place. Much of the area's child population lives elsewhere, in rental apartments and rented houses; the master plan, for example, discusses keeping the Fairburn Gordon Apartments at the crossroads (City of Atlanta & TSW, 2020, p. 90). One possible explanation is that the homeowners who attend NPU meetings see an aging street, while many of the renting families who make the census numbers look young do not come to those meetings.
 
 ## Identity: contested from outside, protective from inside
 
-Outsiders often know Adamsville from the news. Resident B put it directly: people "look at this area and think that it's a bad area," especially around Fairburn Road and MLK. A stray bullet hit her family's car in 2026 while her young daughter was inside. Yet her description of the neighborhood is about quiet, wildlife, and neighbors who "treat you like family." One elderly neighbor took in the family's cat when her son turned out to be allergic, and the children still visit it.
+Resident B said that people from outside "look at this area and think that it's a bad area," especially around Fairburn Road and MLK. A stray bullet hit her family's car in 2026 while her young daughter was inside. Even so, when she described the neighborhood she talked about quiet, wildlife, and neighbors who "treat you like family." One elderly neighbor took in the family's cat when her son turned out to be allergic, and the children still visit it.
 
 ::: {.voice .b}
 "When you drive to the neighborhood, you'll be like, are there even people here? Because it's so quiet."
@@ -175,4 +175,4 @@ Outsiders often know Adamsville from the news. Resident B put it directly: peopl
 <span class="who">Resident A, NPU-H volunteer, interview, October 16, 2026</span>
 :::
 
-Residents' sense of place is strongly natural: Wildwood Lake, creeks, deer, herons, "lots of trees." This echoes the Civic Club's 1955 wish to preserve "the rural qualities we cherish." Adamsville's identity is also stretched by its name. Residents use "Adamsville" loosely for the area around the interstate exit, including subdivisions the city counts as separate neighborhoods. The 1977 NPU-H plan already grouped Adamsville with Boulder Park, Fairburn Heights and Carroll Heights. The name works as a regional identity, anchored by the exit sign, the skating rink and the recreation center, more than as a line on a map.
+Both residents talked a lot about nature, including Wildwood Lake, the creeks, deer, herons and "lots of trees." This is close to the Civic Club's 1955 wish to preserve "the rural qualities we cherish." Residents also use "Adamsville" loosely for the area around the interstate exit, including subdivisions the city counts as separate neighborhoods, and the 1977 NPU-H plan already grouped Adamsville with Boulder Park, Fairburn Heights and Carroll Heights. In practice, the name works more as a regional identity, tied to the exit sign, the skating rink and the recreation center, than as a line on a map.
