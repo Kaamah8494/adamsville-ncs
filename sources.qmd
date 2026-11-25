@@ -8,7 +8,7 @@ title: "Methods and sources"
 
 **Data.** Demographic figures are American Community Survey 2020–2024 five-year estimates (and 2006–2010 for change), compiled by the Atlanta Regional Commission for NPU-H, NSA H02 and the City of Atlanta. The data are in the `data/` folder of this project, and every chart is drawn in R from those files.
 
-**Images.** All images are real photographs or archival scans, credited in captions. No image on this site is AI-generated. Archival maps, reports and photographs are from Georgia State University Library's digital collections; recent photographs are from Wikimedia Commons under the licenses shown.
+**Images.** All images are real photographs, archival scans, or (in one labeled case) an architect's rendering, credited in captions. No image on this site is AI-generated. Archival maps, reports and photographs are from Georgia State University Library's digital collections. Recent photographs are from Wikimedia Commons under the licenses shown, from the websites of the organizations pictured, from Homes.com and the builder Whiting-Turner, and from Google Street View; images not under an open license are used for educational purposes only. Three Street View images were cropped to remove on-screen map controls, and in the Old Adamsville Recreation Center image one Street View navigation marker over the wall was painted out; nothing in the scenes themselves was altered.
 
 
 ## References
@@ -96,6 +96,26 @@ WSB Radio. (2024, December 17). *New affordable senior living housing community 
 WSB-TV News Staff. (2025, October 1). Atlanta's mayor unveils $5B neighborhood reinvestment plan. *WSB-TV*. <https://www.wsbtv.com/news/local/atlanta/atlantas-mayor-unveils-5b-neighborhood-reinvestment-plan/JYODGB5H4RHQNAM6D635DEKY6I/>
 
 ### Images
+
+Atlanta Housing. (n.d.). *Atlanta Housing, city partners break ground on Juanita H. Gardner Village* [Architectural rendering]. <https://www.atlantahousing.org/atlanta-housing-city-partners-break-ground-on-juanita-h-gardner-village/>
+
+Classmates.com. (n.d.). *Margaret Fain Elem* [Photograph]. <https://www.classmates.com/places/school/MARGARET-FAIN-ELEM/7000153287>
+
+Family Action. (n.d.). *Cascade Family Skating in Adamsville, Georgia* [Photograph]. <https://www.familyaction.com/activity/cascade-family-skating>
+
+Google. (2024, November). *31 Brownlee Rd NW, Atlanta, Georgia* [Street View image]. Google Maps. Retrieved November 24, 2026, from <https://www.google.com/maps>
+
+Google. (2025, February). *102 Hemphill School Rd NW, Atlanta, Georgia* [Street View image]. Google Maps. Retrieved November 24, 2026, from <https://www.google.com/maps>
+
+Google. (2025, February). *199 Harwell Rd NW, Atlanta, Georgia* [Street View image]. Google Maps. Retrieved November 24, 2026, from <https://www.google.com/maps>
+
+Homes.com. (n.d.-a). *L.P. Miles Elementary School in Atlanta, GA* [Photograph]. <https://www.homes.com/school/atlanta-ga/l-p-miles-elementary-school/czh3b37peksmj/>
+
+Homes.com. (n.d.-b). *Mays High School in Atlanta, GA* [Photograph]. <https://www.homes.com/school/atlanta-ga/mays-high-school/5pmb2zmfjktmq/>
+
+Jackson Memorial Baptist Church. (n.d.). *About us* [Photograph]. <https://www.jacksonmemorialbaptistchurch.org/about-us>
+
+Whiting-Turner Contracting Company. (n.d.). *Adamsville Regional Health Center* [Photograph]. <https://www.whiting-turner.com/projects/healthcare/adamsville-regional-health-center/>
 
 Lane Brothers Commercial Photographers. (1949, May 13). *Gordon Road* [Photograph]. Lane Brothers Commercial Photographers Photographic Collection, Georgia State University Library. <https://digitalcollections.library.gsu.edu/digital/collection/lane/id/2612>
 

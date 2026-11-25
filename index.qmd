@@ -28,6 +28,21 @@ The story is about continuity more than change. In 1955, a neighborhood civic cl
 **Costs that land on the household.** Flooded basements, long bus commutes and missing sidewalks are public problems that residents pay for privately, in repair bills, time and risk.
 :::
 
+## What is in this case study
+
+The case study has eight parts. The menu on the left stays on screen as you scroll, and every page ends with a link to the next part.
+
+::: {.parts}
+[**1 · Overview**<span>Why Adamsville, three findings, and a 13-stop map tour</span>](index.qmd)
+[**2 · History**<span>From Lick Skillet to annexation, highways and racial change, 1864–2026</span>](history.qmd)
+[**3 · Who lives here**<span>Census profile, age, poverty and renters, with a 2010 vs. 2024 swipe map</span>](people.qmd)
+[**4 · Institutions and power**<span>Who holds power, their incentives, and who is left out</span>](institutions.qmd)
+[**5 · Everyday life**<span>Rhythms, anchors, norms and getting around</span>](everyday.qmd)
+[**6 · Issues residents face**<span>Fresh food, keeping a home, safe streets</span>](issues.qmd)
+[**7 · Recommendations**<span>Five actions for the City of Atlanta</span>](city.qmd)
+[**8 · Methods and sources**<span>Interviews, data, AI-use statement and references</span>](sources.qmd)
+:::
+
 <!-- YOUR VOICE: add 2-3 sentences in your own words on why you chose Adamsville
 (for example, what you learned about it during your internship with Partnership
 for Southern Equity, and what surprised you on your field visit). -->

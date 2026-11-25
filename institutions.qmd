@@ -3,49 +3,130 @@ title: "Institutions"
 subtitle: "Who shapes Adamsville, and who is left out of the room"
 ---
 
-```{r setup}
-library(visNetwork)
-library(dplyr)
-```
-
 Adamsville's institutions are many but thinly connected. Formal power sits with the city and with the agencies that fund development. Informal influence runs through churches, elders and personal relationships. The residents with the least access to either are renters and young families.
 
 ## The institutional map
 
-Click or hover on an institution to see its role, power, incentive and how residents experience it. Solid lines are formal, regular relationships; dashed lines are weak or occasional ones.
+The diagram sorts Adamsville's institutions by the kind of power they hold. Formal power (rules and money) is at the top, the organizations that broker services and voice are in the middle, and residents are at the bottom. **Click any box** to see its role, power, incentive and how residents experience it; its connections stay highlighted. Solid lines are formal, regular relationships. Dashed lines are weak or occasional ones.
 
-```{r network}
-nodes <- tibble::tribble(
-  ~id, ~label, ~group, ~title,
-  "res", "Residents", "people", "<b>Residents</b><br>About 16,000 people in NPU-H: long-time homeowners, renting families, newer owners.<br><i>On the ground:</i> homeowners and elders attend meetings; renters and working parents are mostly absent.",
-  "npu", "NPU-H", "civic", "<b>NPU-H</b><br><i>Role:</i> citizen advisory council for 17 neighborhoods; reviews zoning, licenses, events.<br><i>Power:</i> advisory votes; 2020 master plan.<br><i>Incentive:</i> volunteer-run, minimal budget.<br><i>On the ground:</i> 'one of the most active' (Resident B) but 'like pulling teeth' to get people to come.",
-  "council", "Council District 10", "gov", "<b>Council District 10</b><br><i>Role:</i> Councilmember Andrea L. Boone represents Adamsville.<br><i>Power:</i> legislation, budget requests, calls to departments.<br><i>On the ground:</i> 'very involved,' but 'you have to like stay on top of her' (Resident A).",
-  "city", "City departments", "gov", "<b>City departments</b><br>Planning, Watershed, Parks and Recreation, Transportation, Code Enforcement, Police.<br><i>Incentive:</i> citywide priorities, complaint-driven 311 workloads.<br><i>On the ground:</i> slow, unfinished fixes; code enforcement and police are 'the only people that really enforce anything' (Resident A).",
-  "invest", "Invest Atlanta / TAD", "money", "<b>Invest Atlanta / Hollowell-MLK TAD</b><br><i>Power:</i> grants and tax-increment financing; $500,000 toward the food center.<br><i>Incentive:</i> projects that raise property values and the tax base.<br><i>On the ground:</i> rarely named by residents, yet decides which crossroads projects get money.",
-  "aps", "Atlanta Public Schools", "civic", "<b>Atlanta Public Schools</b><br>Runs Miles, Douglass and Mays; owns the old Fain building.<br><i>Incentive:</i> enrollment and cost savings (about $500,000 a year from closing the ninth-grade campus).",
-  "church", "Churches", "people", "<b>Churches</b><br>Jackson Memorial, First St. John (organized 1883), Legacy, Mount Calvary, City Takers and others.<br><i>Power:</i> moral authority, meeting space, elders' networks, giveaways.",
-  "nonprofit", "Food Bank and nonprofits", "money", "<b>Atlanta Community Food Bank, Young Generation Movement, Gratitude Botanical Farm</b><br>Free groceries for 700+ families a month; youth gardens.<br><i>On the ground:</i> welcome, but 'not necessarily fresh food' (Resident A).",
-  "investors", "Investors and short-term rental owners", "absent", "<b>Investors and short-term rental owners</b><br><i>Power:</i> buy, renovate and rent homes; set rents; file evictions.<br><i>Incentive:</i> rental yield and appreciation.<br><i>On the ground:</i> 'redoing the homes and putting them up for rent, like Airbnb' (Resident A). No seat at NPU-H."
-)
-edges <- tibble::tribble(
-  ~from, ~to, ~dashes,
-  "res", "npu", FALSE, "npu", "council", FALSE, "council", "city", FALSE,
-  "city", "invest", FALSE, "npu", "invest", TRUE, "res", "church", FALSE,
-  "res", "aps", FALSE, "res", "nonprofit", FALSE, "invest", "nonprofit", FALSE,
-  "res", "investors", TRUE, "investors", "invest", TRUE, "res", "city", TRUE,
-  "res", "council", TRUE, "npu", "aps", TRUE, "church", "nonprofit", TRUE
-)
-visNetwork(nodes, edges, height = "520px", width = "100%") |>
-  visGroups(groupname = "people", color = "#e9c74f", shape = "box") |>
-  visGroups(groupname = "civic", color = "#8fb39a", shape = "box") |>
-  visGroups(groupname = "gov", color = "#7fb0cf", shape = "box") |>
-  visGroups(groupname = "money", color = "#e08a7f", shape = "box") |>
-  visGroups(groupname = "absent", color = "#c9c3b3", shape = "box") |>
-  visEdges(color = list(color = "#8a918d"), smooth = FALSE) |>
-  visOptions(highlightNearest = list(enabled = TRUE, degree = 1)) |>
-  visInteraction(tooltipDelay = 50) |>
-  visLayout(randomSeed = 7)
+```{=html}
+<div class="inst">
+  <div class="inst-scroll">
+  <svg id="inst-svg" viewBox="0 0 960 480" role="group" aria-label="Diagram of Adamsville institutions and their relationships">
+    <rect x="0" y="0" width="960" height="150" class="band"/>
+    <rect x="0" y="340" width="960" height="140" class="band"/>
+    <text x="12" y="28" class="tier">FORMAL POWER</text>
+    <text x="12" y="208" class="tier">BROKERS AND SERVICES</text>
+    <text x="12" y="362" class="tier">PEOPLE AND MARKET</text>
+    <g id="inst-edges"></g>
+    <g id="inst-nodes"></g>
+  </svg>
+  </div>
+  <div class="inst-legend">
+    <span><i style="background:#7fb0cf"></i>Government</span>
+    <span><i style="background:#e08a7f"></i>Money and services</span>
+    <span><i style="background:#8fb39a"></i>Civic</span>
+    <span><i style="background:#e9c74f"></i>Community</span>
+    <span><i style="background:#c9c3b3"></i>Outside the room</span>
+    <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#55605b" stroke-width="2"/></svg>Formal tie</span>
+    <span><svg width="34" height="8"><line x1="0" y1="4" x2="34" y2="4" stroke="#55605b" stroke-width="2" stroke-dasharray="6 5"/></svg>Weak tie</span>
+  </div>
+  <div class="inst-panel" id="inst-panel" aria-live="polite"></div>
+</div>
+<script>
+(function(){
+  var C = {gov:"#7fb0cf", money:"#e08a7f", civic:"#8fb39a", people:"#e9c74f", absent:"#c9c3b3"};
+  var N = {
+    city:   {x:200, y:70,  w:180, label:["City departments"], g:"gov",
+             title:"City departments", sub:"Planning, Watershed, Parks and Recreation, Transportation, Code Enforcement, Police",
+             rows:[["Power","Build and fix infrastructure, enforce codes, run parks and recreation centers."],["Incentive","Citywide priorities and complaint-driven 311 workloads."],["On the ground","Slow, unfinished fixes. Code enforcement and police are “the only people that really enforce anything” (Resident A)."]]},
+    council:{x:450, y:70,  w:180, label:["Council District 10"], g:"gov",
+             title:"Council District 10", sub:"Councilmember Andrea L. Boone represents Adamsville",
+             rows:[["Power","Legislation, budget requests, calls to city departments."],["Incentive","Visible wins for constituents who vote and call."],["On the ground","“Very involved,” but “you have to like stay on top of her” (Resident A)."]]},
+    invest: {x:790, y:70,  w:200, label:["Invest Atlanta / TAD"], g:"money",
+             title:"Invest Atlanta and the Hollowell/MLK TAD", sub:"The city's development agency and the tax allocation district along MLK Jr. Drive",
+             rows:[["Power","Grants and tax-increment financing, including $500,000 toward the food center."],["Incentive","Projects that raise property values and the tax base."],["On the ground","Rarely named by residents, yet decides which crossroads projects get money."]]},
+    npu:    {x:140, y:250, w:110, label:["NPU-H"], g:"civic",
+             title:"NPU-H", sub:"Citizen advisory council for 17 neighborhoods",
+             rows:[["Power","Advisory votes on zoning, licenses and events; the 2020 master plan."],["Incentive","Volunteer-run with almost no budget."],["On the ground","“One of the most active” (Resident B), but “like pulling teeth” to get people to come."]]},
+    aps:    {x:365, y:250, w:160, label:["Atlanta Public", "Schools"], g:"civic",
+             title:"Atlanta Public Schools", sub:"Runs Miles, Douglass and Mays; owns the old Fain building",
+             rows:[["Power","Opens, closes and repurposes school buildings."],["Incentive","Enrollment and cost savings (about $500,000 a year from closing the ninth-grade campus)."],["On the ground","“The youth aren't as busy over here as much” (Resident A)."]]},
+    church: {x:570, y:250, w:140, label:["Churches"], g:"people",
+             title:"Churches", sub:"Jackson Memorial, First St. John (organized 1883), Legacy, Mount Calvary, City Takers and others",
+             rows:[["Power","Moral authority, meeting space, elders' networks, giveaways."],["Incentive","Membership and mission."],["On the ground","Elders are “involved in church a lot on Sundays” (Resident B); drives mostly serve non-members (Resident A)."]]},
+    nonprofit:{x:790, y:250, w:220, label:["Food Bank and", "nonprofits"], g:"money",
+             title:"Food Bank and nonprofits", sub:"Atlanta Community Food Bank, Young Generation Movement, Gratitude Botanical Farm",
+             rows:[["Power","Free groceries for 700+ families a month; youth gardens."],["Incentive","Grant-funded programs and people served."],["On the ground","Welcome, but “not necessarily fresh food” (Resident A)."]]},
+    res:    {x:450, y:410, w:240, label:["Residents"], g:"people",
+             title:"Residents", sub:"About 16,000 people in NPU-H: long-time homeowners, renting families, newer owners",
+             rows:[["Power","Votes, calls, meeting attendance, personal ties to officials."],["Who is heard","Homeowners and elders attend meetings."],["Who is not","Renters (54% of households) and working parents are mostly absent."]]},
+    investors:{x:790, y:410, w:230, label:["Investors and short-", "term rental owners"], g:"absent",
+             title:"Investors and short-term rental owners", sub:"Absentee buyers who renovate and rent homes",
+             rows:[["Power","Buy, renovate and rent homes; set rents; file evictions."],["Incentive","Rental yield and appreciation."],["On the ground","“Redoing the homes and putting them up for rent, like Airbnb” (Resident A). No seat at NPU-H."]]}
+  };
+  function h(id){ return N[id].label.length > 1 ? 50 : 38; }
+  // edges: from, to, dashed, optional custom path
+  var E = [
+    ["res","npu",0], ["npu","council",0], ["council","city",0],
+    ["city","invest",0,"M200,51 C200,8 790,8 790,51"],
+    ["npu","invest",1], ["res","church",0], ["res","aps",0], ["res","nonprofit",0],
+    ["invest","nonprofit",0], ["res","investors",1],
+    ["investors","invest",1,"M905,410 C955,410 955,70 890,70"],
+    ["res","city",1,"M340,391 L200,89"], ["res","council",1,"M450,391 L450,89"],
+    ["npu","aps",1], ["church","nonprofit",1]
+  ];
+  var NS = "http://www.w3.org/2000/svg", eg = document.getElementById("inst-edges"), ng = document.getElementById("inst-nodes");
+  function el(t, a){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function anchor(a, b){ // point on box a's edge toward b
+    var A = N[a], B = N[b], dy = B.y - A.y, dx = B.x - A.x;
+    if (Math.abs(dy) < 5) return [A.x + Math.sign(dx) * A.w / 2, A.y];
+    var y = A.y + Math.sign(dy) * h(a) / 2, x = A.x + dx * (h(a) / 2) / Math.abs(dy);
+    return [Math.max(A.x - A.w / 2 + 8, Math.min(A.x + A.w / 2 - 8, x)), y];
+  }
+  var lines = E.map(function(e){
+    var d = e[3];
+    if (!d){ var p = anchor(e[0], e[1]), q = anchor(e[1], e[0]); d = "M" + p + " L" + q; }
+    var path = el("path", {d: d, "class": "edge" + (e[2] ? " weak" : "")});
+    eg.appendChild(path); return {a: e[0], b: e[1], el: path};
+  });
+  var boxes = {};
+  Object.keys(N).forEach(function(id){
+    var n = N[id], H = h(id);
+    var g = el("g", {"class": "node", tabindex: "0", role: "button", "aria-label": n.title});
+    g.appendChild(el("rect", {x: n.x - n.w / 2, y: n.y - H / 2, width: n.w, height: H, rx: 6, fill: C[n.g]}));
+    n.label.forEach(function(t, i){
+      var tx = el("text", {x: n.x, y: n.y + (i - (n.label.length - 1) / 2) * 18 + 5, "text-anchor": "middle"});
+      tx.textContent = t; g.appendChild(tx);
+    });
+    g.addEventListener("click", function(){ select(id); });
+    g.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); select(id); } });
+    ng.appendChild(g); boxes[id] = g;
+  });
+  var panel = document.getElementById("inst-panel");
+  function select(id){
+    var near = {}; near[id] = 1;
+    lines.forEach(function(l){
+      var on = l.a === id || l.b === id;
+      l.el.classList.toggle("on", on); l.el.classList.toggle("off", !on);
+      if (on) { near[l.a] = 1; near[l.b] = 1; }
+    });
+    Object.keys(boxes).forEach(function(k){
+      boxes[k].classList.toggle("sel", k === id); boxes[k].classList.toggle("dim", !near[k]);
+    });
+    var n = N[id], links = lines.filter(function(l){ return l.a === id || l.b === id; })
+      .map(function(l){ var o = l.a === id ? l.b : l.a; return N[o].title + (l.el.classList.contains("weak") ? " (weak)" : ""); });
+    panel.style.borderLeftColor = C[n.g];
+    panel.innerHTML = "<h3>" + n.title + "</h3><p class='sub'>" + n.sub + "</p><dl>" +
+      n.rows.map(function(r){ return "<dt>" + r[0] + "</dt><dd>" + r[1] + "</dd>"; }).join("") +
+      "<dt>Connected to</dt><dd>" + links.join(", ") + "</dd></dl>";
+  }
+  select("res");
+})();
+</script>
 ```
+
+*Sources: interviews with Residents A and B (October 2026); City of Atlanta & TSW (2020); Invest Atlanta (2025a, 2025b); Atlanta News First (2022); Daniel (2025).*
 
 ## Incentives that pull in different directions
 

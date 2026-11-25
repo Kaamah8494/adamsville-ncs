@@ -23,10 +23,28 @@ This was not a single, all-white rural community. In 1907 a congregation started
 
 Growth arrived quickly after World War II. In the Civic Club's words, "in 1951, when we were annexed by Atlanta, we became aware of how different the area was becoming. We suddenly found ourselves in the path of Atlanta's enormous urban growth" (Adamsville Civic Club, 1955, p. 3). That was the year the state approved Mayor Hartsfield's Plan of Improvement, which tripled the city's area in 1952 (Hartsfield, 1952). Annexation came in stages: in 1966 the General Assembly authorized a referendum to bring the remaining unincorporated Adamsville area into the city on January 1, 1967 (Atlanta Board of Aldermen, 1966).
 
+Commercial photographers working on Gordon Road, the old road west through Adamsville that is now Martin Luther King Jr. Drive, recorded this postwar change: new brick houses on cleared lots, a lumber yard supplying the building boom, and rail crews laying track for the industry growing to the west. The negative envelopes record only "Gordon Road," so the exact locations are not known.
+
+::: {layout-ncol=3}
+![Gordon Road, May 13, 1949. Lane Brothers Commercial Photographers Collection, GSU Library. Educational use.](images/gordon1949.jpg)
+
+![West Lumber Company, Gordon Road, March 20, 1951. Lane Brothers Collection, GSU Library. Educational use.](images/lumber1951.jpg)
+
+![Railroad workers laying track, Gordon Road, March 18, 1953. Lane Brothers Collection, GSU Library. Educational use.](images/rail1953.jpg)
+:::
+
 ::: {layout="[[1,1]]"}
 ![Page 2 of *Neighborhood Planning in Adamsville: Now… Tomorrow* (Adamsville Civic Club, 1955). Planning Atlanta Collection, Georgia State University Library.](images/civic_opp.jpg)
 
 ![Cover of the 1955 report. Planning Atlanta Collection, Georgia State University Library.](images/civic_cover.jpg)
+:::
+
+The Civic Club's report was built around Margaret Fain School, which it called "the most important building in the community," the place for meetings, dinners and play (Adamsville Civic Club, 1955). The building still stands. From 2022 it housed Douglass High School's ninth-grade academy, and Atlanta Public Schools now plans to close it (Atlanta News First, 2022; Daniel, 2025).
+
+::: {layout-ncol=2}
+![Margaret Fain Elementary School, historical photograph (date not recorded). Classmates.com. Used for educational purposes.](images/fain_old.jpg){fig-alt="Black-and-white photo of a long one-story brick school behind bare trees on a grassy bank."}
+
+![The Fain school site in February 2025, signed as Douglass High School's 9th Grade STEAM Academy at the Margaret Fain School. Image: Google Street View.](images/fain_today.jpg){fig-alt="A covered walkway leading to a school entrance with a yellow sign."}
 :::
 
 **What the Civic Club asked for in 1955**
@@ -55,7 +73,11 @@ Residents I interviewed tell a story of a peak followed by decline. Resident B, 
 <span class="who">Resident B, homeowner, interview, October 19, 2026</span>
 :::
 
-The two accounts do not contradict each other. The archive explains why the Black middle-class Adamsville that residents remember arrived on land that had been planned and zoned around them, on the far side of an expressway the city had treated as a racial line. Public memory today is organized around Black civic leaders. The 2023 "Adamsville Legacy" mural on MLK Jr. Drive by artist Ashley Dopson honors former council member C. T. Martin, State Senator Horace Tate, Rev. Dr. Gregory A. Sutton of Jackson Memorial Baptist Church, and Mayor Andre Dickens, who said at the unveiling, "This is home for me, I grew up right here" (Bunch, 2023).
+The two accounts do not contradict each other. The archive explains why the Black middle-class Adamsville that residents remember arrived on land that had been planned and zoned around them, on the far side of an expressway the city had treated as a racial line. The road at Adamsville's center now carries Dr. King's name, which links the neighborhood to the city's civil rights history. Downtown, the same road was once Hunter Street, where students marched on the State Capitol in 1960.
+
+![Marchers on Hunter Street (later Martin Luther King Jr. Drive) during a civil rights march on the Georgia State Capitol, May 17, 1960. Atlanta Journal-Constitution Photographic Archives, GSU Library. Educational use.](images/march1960.jpg){width=85%}
+
+Public memory today is organized around Black civic leaders. The 2023 "Adamsville Legacy" mural on MLK Jr. Drive by artist Ashley Dopson honors former council member C. T. Martin, State Senator Horace Tate, Rev. Dr. Gregory A. Sutton of Jackson Memorial Baptist Church, and Mayor Andre Dickens, who said at the unveiling, "This is home for me, I grew up right here" (Bunch, 2023).
 
 ## Timeline, 1864–2026
 

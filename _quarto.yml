@@ -8,24 +8,27 @@ website:
   title: "Adamsville at the Crossroads"
   description: "A neighborhood case study of Adamsville (NPU-H), Atlanta, Georgia."
   page-navigation: true
-  navbar:
-    left:
+  sidebar:
+    style: docked
+    title: "Adamsville at the Crossroads"
+    collapse-level: 1
+    contents:
       - href: index.qmd
-        text: Start
+        text: "1 · Overview"
       - href: history.qmd
-        text: History
+        text: "2 · History"
       - href: people.qmd
-        text: Who lives here
+        text: "3 · Who lives here"
       - href: institutions.qmd
-        text: Institutions
+        text: "4 · Institutions and power"
       - href: everyday.qmd
-        text: Everyday life
+        text: "5 · Everyday life"
       - href: issues.qmd
-        text: Issues
+        text: "6 · Issues residents face"
       - href: city.qmd
-        text: For the city
+        text: "7 · Recommendations for the city"
       - href: sources.qmd
-        text: Sources
+        text: "8 · Methods and sources"
   page-footer:
     center: "Faisal Kaamah Abdallah · CP 6036 Community Dynamics and Engagement · Georgia Tech · Fall 2026"
 
