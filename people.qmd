@@ -79,6 +79,72 @@ ind |>
 
 Change since 2010 is mixed. Estimated population grew from 14,988 to 16,248, poverty fell from 33 to 30 percent, and vacancy dropped from 19 to 12 percent. Median household income roughly doubled in current dollars (from $26,807), suggesting both recovery from the foreclosure crisis and the arrival of higher-income households. In Adamsville's core (NSA H02) about seven in ten households rent; that figure is far less certain (± 21 points) but points the same way.
 
+## Swipe the map: 2006–2010 vs. 2020–2024
+
+Drag the white handle left and right. The left side shows census tracts in 2006–2010; the right side shows the same tracts in 2020–2024. Choose the measure with the buttons, and hover over a tract to see both values and the margin of error. The red outline is NPU-H; the dashed outline is Adamsville's statistical area (NSA H02).
+
+```{r swipe-data}
+#| output: asis
+cat("<script>window.TRACTS = ", paste(readLines("data/tracts_acs.geojson", warn = FALSE), collapse = ""), ";</script>\n", sep = "")
+cat("<script>window.NPUH = ", paste(readLines("data/npu_h.geojson", warn = FALSE), collapse = ""), ";</script>\n", sep = "")
+cat("<script>window.NSA = ", paste(readLines("data/nsa_h02.geojson", warn = FALSE), collapse = ""), ";</script>\n", sep = "")
+```
+
+```{=html}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<div class="swipe-tools" role="group" aria-label="Choose a measure">
+  <button type="button" class="on" data-k="pPopPov">Poverty rate</button>
+  <button type="button" data-k="pRenterOcc">Renter households</button>
+</div>
+<div class="swipe-wrap">
+  <div id="swipe-map"></div>
+  <div class="swipe-label left">2006&ndash;2010</div>
+  <div class="swipe-label right">2020&ndash;2024</div>
+  <input type="range" id="swipe-range" min="0" max="100" value="50" aria-label="Swipe between periods">
+</div>
+<div class="swipe-legend" id="swipe-legend"></div>
+<script>
+(function(){
+  var map = L.map("swipe-map", {scrollWheelZoom: false}).setView([33.757, -84.507], 13);
+  L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {maxZoom: 16, attribution: "Esri, HERE, Garmin, OpenStreetMap contributors | Data: ARC, ACS"}).addTo(map);
+  map.createPane("leftPane"); map.createPane("rightPane"); map.createPane("topPane");
+  map.getPane("topPane").style.zIndex = 450; map.getPane("topPane").style.pointerEvents = "none";
+  var breaks = [10, 20, 30, 40, 50], cols = ["#fff5eb", "#fdd0a2", "#fd8d3c", "#e6550d", "#a63603", "#5e1f02"];
+  function col(v){ if (v == null) return "#ccc"; for (var i = 0; i < breaks.length; i++) if (v < breaks[i]) return cols[i]; return cols[cols.length - 1]; }
+  var key = "pPopPov", names = {pPopPov: "Poverty rate", pRenterOcc: "Renter households"};
+  function tip(p){ return "<b>Tract " + p.GEOID.slice(5) + "</b><br>" + names[key] + "<br>2006&ndash;2010: " + p[key + "_e10"] + "%<br>2020&ndash;2024: " + p[key + "_e24"] + "% (&plusmn; " + p[key + "_m24"] + ")"; }
+  function layer(pane, suffix){
+    return L.geoJSON(window.TRACTS, {pane: pane, renderer: L.svg({pane: pane}),
+      style: function(f){ return {color: "#fff", weight: 1, fillOpacity: 0.8, fillColor: col(f.properties[key + suffix])}; },
+      onEachFeature: function(f, l){ l.bindTooltip(function(){ return tip(f.properties); }, {sticky: true}); }}).addTo(map);
+  }
+  var left = layer("leftPane", "_e10"), right = layer("rightPane", "_e24");
+  L.geoJSON(window.NPUH, {pane: "topPane", style: {color: "#c2412f", weight: 3, fill: false}}).addTo(map);
+  L.geoJSON(window.NSA, {pane: "topPane", style: {color: "#1c2422", weight: 2, dashArray: "6 5", fill: false}}).addTo(map);
+  var range = document.getElementById("swipe-range");
+  function clip(){
+    var nw = map.containerPointToLayerPoint([0, 0]), se = map.containerPointToLayerPoint(map.getSize());
+    var x = nw.x + map.getSize().x * range.value / 100;
+    map.getPane("leftPane").style.clip = "rect(" + [nw.y, x, se.y, nw.x].join("px,") + "px)";
+    map.getPane("rightPane").style.clip = "rect(" + [nw.y, se.x, se.y, x].join("px,") + "px)";
+  }
+  range.addEventListener("input", clip); map.on("move zoom resize", clip); clip();
+  function restyle(){
+    left.setStyle(function(f){ return {fillColor: col(f.properties[key + "_e10"])}; });
+    right.setStyle(function(f){ return {fillColor: col(f.properties[key + "_e24"])}; });
+  }
+  document.querySelectorAll(".swipe-tools button").forEach(function(b){
+    b.onclick = function(){ key = b.dataset.k; document.querySelectorAll(".swipe-tools button").forEach(function(x){ x.classList.toggle("on", x === b); }); restyle(); };
+  });
+  var lg = ["under 10%", "10&ndash;19%", "20&ndash;29%", "30&ndash;39%", "40&ndash;49%", "50% or more"];
+  document.getElementById("swipe-legend").innerHTML = lg.map(function(t, i){ return '<span><i style="background:' + cols[i] + '"></i>' + t + "</span>"; }).join("");
+})();
+</script>
+```
+
+*Source: Atlanta Regional Commission, American Community Survey 2006–2010 and 2020–2024 five-year estimates by 2020 census tract. Tract estimates carry wide margins of error; read patterns, not single values.*
+
 ## Two stories about age
 
 ::: {layout-ncol=2}

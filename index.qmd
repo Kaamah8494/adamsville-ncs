@@ -6,12 +6,6 @@ date: "November 24, 2026"
 toc: false
 ---
 
-```{r setup}
-library(leaflet)
-library(readr)
-library(jsonlite)
-```
-
 ![Martin Luther King Jr. Drive (State Route 139) in Adamsville. Photo: Thomson200, 2016, CC0, Wikimedia Commons.](images/hero.jpg){fig-alt="A four-lane road with power lines and a fast-food sign in the distance."}
 
 For seventy years, plans for this west Atlanta neighborhood have circled the same intersection. What residents say they still need is strikingly close to what their neighbors asked for in 1955.
@@ -38,31 +32,70 @@ The story is about continuity more than change. In 1955, a neighborhood civic cl
 (for example, what you learned about it during your internship with Partnership
 for Southern Equity, and what surprised you on your field visit). -->
 
-## Twelve places that explain Adamsville
+## Thirteen places that explain Adamsville
 
-Click a marker to read about each place. The dashed outline is Neighborhood Statistical Area H02 (Adamsville and Oakcliff), the area the city uses for census statistics.
+A guided tour, in the style of an ArcGIS StoryMap map tour. Use **Next** and **Back**, click a numbered marker, or pick a stop from the strip below the map. Switch between street, gray and satellite basemaps with the layer button at the top right of the map. The dashed outline is Neighborhood Statistical Area H02 (Adamsville and Oakcliff), the area the city uses for census statistics.
 
-```{r map}
-places <- read_csv("data/places.csv", show_col_types = FALSE)
-nsa <- paste(readLines("data/nsa_h02.geojson", warn = FALSE), collapse = "")
-
-pal <- colorFactor(c("#d2493c", "#6f9a7c", "#b8901c", "#4f8fb4"),
-                   domain = c("Commercial", "Civic", "Recreation", "Service"))
-
-leaflet(places, height = 560) |>
-  addProviderTiles(providers$CartoDB.Positron) |>
-  addGeoJSON(nsa, color = "#c2412f", weight = 3, dashArray = "8 6",
-             fillColor = "#e9c74f", fillOpacity = 0.25) |>
-  addCircleMarkers(~lon, ~lat, radius = 11, color = "#ffffff", weight = 2,
-                   fillColor = ~pal(type), fillOpacity = 1,
-                   label = ~paste0(id, ". ", name),
-                   popup = ~paste0("<b>", id, ". ", name, "</b><br>", note)) |>
-  addLabelOnlyMarkers(~lon, ~lat, label = ~as.character(id),
-                      labelOptions = labelOptions(noHide = TRUE, direction = "center",
-                                                  textOnly = TRUE,
-                                                  style = list("color" = "white", "font-weight" = "bold"))) |>
-  addLegend("bottomright", pal = pal, values = ~type, title = "Place type") |>
-  setView(lng = -84.505, lat = 33.757, zoom = 14)
+```{r tour-data}
+#| output: asis
+places <- read.csv("data/places.csv", stringsAsFactors = FALSE)
+cat("<script>window.PLACES = ", jsonlite::toJSON(places, dataframe = "rows"), ";</script>\n", sep = "")
+cat("<script>window.NSA = ", paste(readLines("data/nsa_h02.geojson", warn = FALSE), collapse = ""), ";</script>\n", sep = "")
 ```
 
-*Boundary: Atlanta Regional Commission. Basemap: CARTO, OpenStreetMap contributors. Locations geocoded with the ArcGIS World Geocoding Service.*
+```{=html}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<div class="tour">
+  <div class="tour-panel">
+    <div class="tour-media"><img id="tour-img" alt=""><div id="tour-noimg">No public photograph of this place is available. Switch the map to Satellite to see it from above.</div></div>
+    <div class="tour-body">
+      <div class="tour-count" id="tour-count"></div>
+      <h3 id="tour-title"></h3>
+      <p id="tour-text"></p>
+      <p class="tour-cap" id="tour-cap"></p>
+      <div class="tour-nav"><button id="tour-prev" type="button">&larr; Back</button><button id="tour-next" type="button">Next &rarr;</button></div>
+    </div>
+  </div>
+  <div id="tour-map"></div>
+</div>
+<div class="tour-strip" id="tour-strip"></div>
+<script>
+(function(){
+  var P = window.PLACES, colors = {Commercial:"#d2493c", Civic:"#4f8fb4", Recreation:"#b8901c", Service:"#6f9a7c", Housing:"#7a4fb4"};
+  var streets = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom: 19, attribution: "&copy; OpenStreetMap contributors"});
+  var gray = L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {maxZoom: 16, attribution: "Esri, HERE, Garmin, OpenStreetMap contributors"});
+  var sat = L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", {maxZoom: 19, attribution: "Esri, Maxar, Earthstar Geographics"});
+  var map = L.map("tour-map", {layers: [streets], scrollWheelZoom: false}).setView([33.757, -84.505], 14);
+  L.control.layers({"Streets": streets, "Gray": gray, "Satellite": sat}).addTo(map);
+  L.geoJSON(window.NSA, {style: {color: "#c2412f", weight: 3, dashArray: "8 6", fillColor: "#e9c74f", fillOpacity: 0.15}}).addTo(map);
+  var markers = P.map(function(p, i){
+    var icon = L.divIcon({className: "tour-pin", html: '<span style="background:' + (colors[p.type] || "#333") + '">' + p.id + "</span>", iconSize: [30, 30], iconAnchor: [15, 15]});
+    return L.marker([p.lat, p.lon], {icon: icon, title: p.name}).addTo(map).on("click", function(){ show(i); });
+  });
+  var strip = document.getElementById("tour-strip");
+  P.forEach(function(p, i){
+    var b = document.createElement("button"); b.type = "button"; b.innerHTML = "<b>" + p.id + "</b> " + p.name;
+    b.style.borderLeftColor = colors[p.type] || "#333"; b.onclick = function(){ show(i); }; strip.appendChild(b);
+  });
+  var cur = 0;
+  function show(i){
+    cur = (i + P.length) % P.length; var p = P[cur];
+    document.getElementById("tour-count").textContent = "Stop " + p.id + " of " + P.length + " \u00b7 " + p.type;
+    document.getElementById("tour-title").textContent = p.name;
+    document.getElementById("tour-text").textContent = p.note;
+    var img = document.getElementById("tour-img"), no = document.getElementById("tour-noimg");
+    if (p.image) { img.src = p.image; img.alt = p.caption; img.hidden = false; no.hidden = true; document.getElementById("tour-cap").textContent = p.caption; }
+    else { img.hidden = true; no.hidden = false; document.getElementById("tour-cap").textContent = ""; }
+    markers.forEach(function(m, j){ m.getElement() && m.getElement().classList.toggle("on", j === cur); });
+    [].forEach.call(strip.children, function(c, j){ c.classList.toggle("on", j === cur); });
+    map.flyTo([p.lat, p.lon], 16, {duration: 0.8});
+  }
+  document.getElementById("tour-prev").onclick = function(){ show(cur - 1); };
+  document.getElementById("tour-next").onclick = function(){ show(cur + 1); };
+  show(0);
+})();
+</script>
+```
+
+*Boundary: Atlanta Regional Commission. Locations geocoded with the ArcGIS World Geocoding Service. Basemaps: OpenStreetMap contributors; Esri.*
